@@ -43,5 +43,6 @@ def about(request):
 
 def clear(request):
     data.objects.all().delete()
+    tag.objects.all().delete()
     datas = data.objects.all()
     return render_to_response('index.html', {'datas' : datas, 'num' : len(datas)})
