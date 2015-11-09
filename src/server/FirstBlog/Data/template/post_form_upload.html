@@ -1,0 +1,43 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<link href="images/favicon.ico" rel="shorcut icon">
+	<link rel="stylesheet" href="{% static "css/style.css" %}">
+	<title>Simple Data Saver</title>
+</head>
+
+
+<div class="page-header">
+<center><h1>Simple Data Saver</h1></center>
+</div>
+
+<body>
+
+
+<div class="nav-bar">
+<ul>	
+	<li><a href="/home">Home</a></li>
+	<li><a href="/create">Insert Data</a></li>
+	<li><a href="/about">About</a></li>
+</ul>
+</div>
+
+<br><br>
+
+<li>Please fill up following fileds then submit.</li>
+<form action='/form_upload.html' method='post'>{% csrf_token %}
+{{ form.as_ul }}
+<input type='submit' value='Submit' />
+</form>
+<body>
+<footer>
+	<center>
+  Copyright © 2015 Yihan Lu. All Rights Reserved. <br>Contact information: <a href="mailto:yihan.lu@outlook.com">yihan.lu@outlook.com</a>
+	</center>
+</footer> 
+</html>
